@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project 1</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>    
+    <!-- Add HTML content, SVG drawing area, ... -->
+    <h1>Comparing Demographics to Income on Counties in the US</h1>
+    <div class="headerText">
+      <h3>By: Casey Jackson</h3>
+      <h3>Using Data from the USDA Atlas of Rural and Small-Town America</h3>
+    </div>
+    <div class="container">
+      <div class="top-charts">
+        <div id="histogram1">
+        </div>
+        <div class="controls">
+          <div class="dataControls">
+            <h4>Select Data:</h4>
+          <label for="attribute 1">Attribute 1 (x):</label>
+          <select id="attribute1">
+            <optgroup label="People">
+              <option value="Percent Under 18">Percent Under 18</option>
+              <option value="Percent 65 or Older">Percent 65 or Older</option>
+              <option value="Percent White">Percent White</option>
+              <option value="Percent African American">Percent African American</option>
+              <option value="Percent Asian">Percent Asian</option>
+              <option value="Percent Native American">Percent Native American</option>
+              <option value="Percent Hispanic">Percent Hispanic</option>
+              <option value="Percent Multiple Race">Percent Multiple Race</option>
+              <option value="Percent Foreign Born">Percent Foreign Born</option>
+              <option value="Percent Europe Born">Percent Europe Born</option>
+              <option value="Percent Mexican Born">Percent Mexican Born</option>
+              <option value="Percent  Non-English Households">Percent  Non-English Households</option>
+              <option value="Percent No High School Diploma">Percent No High School Diploma</option>
+              <option value="Percent High School Only">Percent High School Only</option>
+              <option value="Percent Some College">Percent Some College</option>
+              <option value="Percent Associate's Degree">Percent Associate's Degree</option>
+              <option value="Percent 4-Year Degree or Higher"  selected="selected">Percent 4-Year Degree or Higher</option>
+              <option value="Average Household Size">Average Household Size</option>
+              <option value="Percent Female-Lead Families">Percent Female-Lead Families</option>
+            </optgroup>
+            <optgroup label="Income">
+              <option value="Median Household Income">Median Household Income</option>
+              <option value="Income Per Capita">Income Per Capita</option>
+              <option value="Poverty Rate">Poverty Rate</option>
+              <option value="Child Poverty Rate">Child Poverty Rate</option>
+              <option value="Deep Poverty Rate">Deep Poverty Rate</option>
+              <option value="Child Deep Poverty Rate">Child Deep Poverty Rate</option>
+            </optgroup>
+          </select>
+          <br />
+          <label for="attribute 2">Attribute 2 (y):</label>
+          <select id="attribute2">
+            <optgroup label="People">
+              <option value="Percent Under 18">Percent Under 18</option>
+              <option value="Percent 65 or Older">Percent 65 or Older</option>
+              <option value="Percent White">Percent White</option>
+              <option value="Percent African American">Percent African American</option>
+              <option value="Percent Asian">Percent Asian</option>
+              <option value="Percent Native American">Percent Native American</option>
+              <option value="Percent Hispanic">Percent Hispanic</option>
+              <option value="Percent Multiple Race">Percent Multiple Race</option>
+              <option value="Percent Foreign Born">Percent Foreign Born</option>
+              <option value="Percent Europe Born">Percent Europe Born</option>
+              <option value="Percent Mexican Born">Percent Mexican Born</option>
+              <option value="Percent  Non-English Households">Percent  Non-English Households</option>
+              <option value="Percent No High School Diploma">Percent No High School Diploma</option>
+              <option value="Percent High School Only">Percent High School Only</option>
+              <option value="Percent Some College">Percent Some College</option>
+              <option value="Percent Associate's Degree">Percent Associate's Degree</option>
+              <option value="Percent 4-Year Degree or Higher">Percent 4-Year Degree or Higher</option>
+              <option value="Average Household Size">Average Household Size</option>
+              <option value="Percent Female-Lead Families">Percent Female-Lead Families</option>
+            </optgroup>
+            <optgroup label="Income">
+              <option value="Median Household Income" selected="selected">Median Household Income</option>
+              <option value="Income Per Capita">Income Per Capita</option>
+              <option value="Poverty Rate">Poverty Rate</option>
+              <option value="Child Poverty Rate">Child Poverty Rate</option>
+              <option value="Deep Poverty Rate">Deep Poverty Rate</option>
+              <option value="Child Deep Poverty Rate">Child Deep Poverty Rate</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="mapControls">
+          <h4>Map Controls</h4>
+          <button id="mapSwitch">Swap Map Data</button>
+          <br />
+          <label for="mapClassifier">Separate Map By:</label>
+          <select id="mapClassifier">
+            <option value="State">State</option>
+            <option value="County" selected="selected">County</option>
+          </select>
+          <br />
+          <label for="mapFilter">Filter State:</label>
+          <select id="mapFilter">
+            <option value="00" selected="selected">United States</option>
+            <option value="01">Alabama</option>
+            <option value="02">Alaska</option>
+            <option value="04">Arizona</option>
+            <option value="05">Arkansas</option>
+            <option value="06">California</option>
+            <option value="08">Colorado</option>
+            <option value="09">Connecticut</option>
+            <option value="10">Delaware</option>
+            <option value="11">District of Colombia</option>
+            <option value="12">Florida</option>
+            <option value="13">Georgia</option>
+            <option value="15">Hawaii</option>
+            <option value="16">Idaho</option>
+            <option value="17">Illinois</option>
+            <option value="18">Indiana</option>
+            <option value="19">Iowa</option>
+            <option value="20">Kansas</option>
+            <option value="21">Kentucky</option>
+            <option value="22">Louisiana</option>
+            <option value="23">Maine</option>
+            <option value="24">Maryland</option>
+            <option value="25">Massachusetts</option>
+            <option value="26">Michigan</option>
+            <option value="27">Minnesota</option>
+            <option value="28">Mississippi</option>
+            <option value="29">Missouri</option>
+            <option value="30">Montana</option>
+            <option value="31">Nebraska</option>
+            <option value="32">Nevada</option>
+            <option value="33">New Hampshire</option>
+            <option value="34">New Jersey</option>
+            <option value="35">New Mexico</option>
+            <option value="36">New York</option>
+            <option value="37">North Carolina</option>
+            <option value="38">North Dakota</option>
+            <option value="39">Ohio</option>
+            <option value="40">Oklahoma</option>
+            <option value="41">Oregon</option>
+            <option value="42">Pennsylvania</option>
+            <option value="44">Rhode Island</option>
+            <option value="45">South Carolina</option>
+            <option value="46">South Dakota</option>
+            <option value="47">Tennessee</option>
+            <option value="48">Texas</option>
+            <option value="49">Utah</option>
+            <option value="50">Vermont</option>
+            <option value="51">Virginia</option>
+            <option value="52">Washington</option>
+            <option value="54">West Virginia</option>
+            <option value="55">Wisconsin</option>
+            <option value="56">Wyoming</option>
+          </select>
+        </div>
+        </div>
+        <div id="histogram2">
+        </div>
+      </div>
+      <div class="bottom-charts">
+        <div id="scatterplot">
+        </div>
+        <div id="map1">
+        </div>
+        <!-- <div id="map2"></div> -->
+      </div>
+    </div>
+
+    <svg height="5" width="5" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="lightstripe" patternUnits="userSpaceOnUse" width="5" height="5"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1JyBoZWlnaHQ9JzUnPgogIDxyZWN0IHdpZHRoPSc1JyBoZWlnaHQ9JzUnIGZpbGw9J3doaXRlJy8+CiAgPHBhdGggZD0nTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVonIHN0cm9rZT0nIzg4OCcgc3Ryb2tlLXdpZHRoPScxJy8+Cjwvc3ZnPg==" x="0" y="0" width="5" height="5"> </image> </pattern> </defs></svg>
+    <div id="tooltip"></div>
+    <!-- D3 bundle -->
+    <script src="js/d3.v7.min.js"></script>
+
+    <!-- Our JS code -->
+    <script src="js/main.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/chloroplethMap.js"></script>
+    <script src="js/topojson.v3.js"></script>
+</body>
+</html>
